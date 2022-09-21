@@ -1,4 +1,4 @@
-# Bioinformatic Analysis for Bisulfite Sequencing Data
+# Applying AnchorWave to Address Plant Genome Alignment
 
 ## Introduction
 anchorwave is a software for  sensitive alignment of genomes with high sequence diversity, extensive structural polymorphism and whole-genome duplication variation
