@@ -31,6 +31,7 @@ conda install -c bioconda -c conda-forge anchorwave
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/fasta/zea_mays/dna/Zea_mays.AGPv4.dna.toplevel.fa.gz
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/gff3/zea_mays/Zea_mays.AGPv4.34.gff3.gz
 wget http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/sorghum_bicolor/dna/Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.gz
+gunzip *.gz
 ```
 
 
@@ -39,9 +40,12 @@ wget http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/sorghum_bicolor/d
 
 ## Major Steps
 ### Access the level of chromosome and collineraity
+
 ```
+#Access the level of chromosome and collineraity
 samtools faidx Zea_mays.AGPv4.dna.toplevel.fa
 samtools faidx Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa
+#Acquire the first contig name "super_16" 
 less Zea_mays.AGPv4.dna.toplevel.fa.fai 
 less Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.fai 
 
@@ -50,6 +54,7 @@ less Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.fai
 ### Extract CDS and lift over reference and query genome
 
 For AnchorWave, “gff2seq” function is used for extracting CDS sequences, ‘r’, ‘i’ and ‘o’ represents input reference FASTA, GFF(3) file and output files. For minimap2, “x splice” function represents long-read splice alignment, ‘t’ represents the number of threads, ‘k’ represents k-mer size, ‘p’ represents min score ratio and ‘a’ represents that output file is SAM format. Other parameters are default. 
+
 ```
 ## extract cds from maize ref ##
 anchorwave gff2seq -i Zea_mays.AGPv4.34.gff3 -r Zea_mays.AGPv4.dna.toplevel.fa -o cds.fa
