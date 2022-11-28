@@ -1,7 +1,7 @@
 
 # Applying AnchorWave to Address Plant Genome Alignment
 
-The process uses function
+The process uses function "genoAli" that is suitable for genome alignment without translocation or chromosome fusion.
 
 
 ## Input data
