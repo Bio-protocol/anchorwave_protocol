@@ -1,5 +1,8 @@
 #Using R to plot a dotplot.
 #R
+changetoM <- function ( position ){
+position=position/1000000;
+paste(position, "M", sep="")}
 library(ggplot2)
 #Read gene position and belong to which chromosome and so on
 data =read.table("align1.anchors", header=TRUE)
