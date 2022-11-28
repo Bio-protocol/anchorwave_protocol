@@ -12,7 +12,7 @@ data = data[which(data$queryChr %in% c("1", "2", "3", "4", "5", "6", "7", "8", "
 data$refChr = factor(data$refChr, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
 data$queryCh = factor(data$queryChr, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
 #Using ggplot2 to plot a dotplot and beautify it.
-png("E:\\R_Scripts\\figure1.png")
+png("E:\\R_Scripts\\figure2.png")
 ggplot(data=data, aes(x=queryStart, y=referenceStart))+
 geom_point(size=0.5, aes(color=strand)) +
 facet_grid(refChr~queryChr, scales="free", space="free") +
