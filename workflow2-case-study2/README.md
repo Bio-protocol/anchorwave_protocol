@@ -113,7 +113,7 @@ For	AnchorWave, “genoAli” function is used for whole genome alignment withou
 
 ```
 anchorwave genoAli -i Zea_mays.Zm-B73-REFERENCE-NAM-5.0.55.gff3 -as cds.fa -r Zea_mays.Zm-B73-REFERENCE-NAM-5.0.dna.toplevel.fa -a cds.sam -ar ref.sam 
--s Zm-Mo17-REFERENCE-CAU-1.0.fa -n anchors.anchors  -IV
+-s Zm-Mo17-REFERENCE-CAU-1.0.fa -n anchors.anchors -o b73tomo17.maf -f  b73tomo17.f.maf -IV
 ```
 ## Expecteed results
 
