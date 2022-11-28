@@ -5,6 +5,9 @@ anchorwave is a software for  sensitive alignment of genomes with high sequence 
 
 The process generally includes three steps: 1.	 Extract CDS as anchors, 2. lift over to the query and reference genome, 3. Perform whole genome alignment and the other steps that visualizes the relationship of two genomes.
 
+There are two functions implemented in AnchorWave for genome alignment, “genoAli” and “proali”. “genoAli” is suitable for genome alignment without translocation or chromosome fusion. “genoAli” is design to alignment the genomes from different accessions of the same species. It’s also recommended that “genoAli” is used at related species with few structural variations. “proali” is suitable for genome alignment with translocation variation, chromosome fusion or even whole genome duplication.
+In the case study 1, we use ["proali"](https://github.com/Bio-protocol/anchorwave_protocol/tree/master/workflow) for Genome alignment with relocation variation, chromosome fusion or whole genome duplication.
+In the case study 1, we use ["genoAli"](https://github.com/Bio-protocol/anchorwave_protocol/tree/master/workflow2-case-study2) for Genome alignment without translocation rearrangement while with inversions.
 ## Installation
 Users should first install the following software.
 
