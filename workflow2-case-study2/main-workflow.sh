@@ -21,7 +21,7 @@ perl alignmentToDotplot.pl Zea_mays.AGPv4.34.gff3 cds.sam > maizecds.tab
 
 #Applying anchorwave to identify the collinearity
 anchorwave genoAli -i Zea_mays.Zm-B73-REFERENCE-NAM-5.0.55.gff3 -as cds.fa -r Zea_mays.Zm-B73-REFERENCE-NAM-5.0.dna.toplevel.fa -a cds.sam -ar ref.sam 
--s Zm-Mo17-REFERENCE-CAU-1.0.fa -n anchors.anchors  -IV
+-s Zm-Mo17-REFERENCE-CAU-1.0.fa -n align1.anchor  -IV
 
 #and then use R to plot Figure4 deposited by 3figure4_plot.R
 
