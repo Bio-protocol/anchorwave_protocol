@@ -76,6 +76,7 @@ axis.text.x = element_text(angle=300, hjust=0, vjust=1, colour = "black"))
 dev.off()
 
 ```
+![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure1.png)
 
 ### Applying anchorwave to identify the collinearity and WGD
 ```
@@ -110,11 +111,13 @@ scale_y_continuous(labels=changetoM) +
         axis.text.x = element_text(angle=300,hjust=0, vjust=0.5, colour = "black") )
 dev.off()
 ```
-
+![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure2.png)
 ### Base-pair resolved genome alignment
 ```
 anchorwave proali -i Zea_mays.AGPv4.34.gff3 -r Zea_mays.AGPv4.dna.toplevel.fa -a cds.sam -as cds.fa -ar ref.sam -s \
 Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa  -n align.anchors -o align.maf -t 10 -R 1 -Q 2 -f align1.f.maf > log 2>&1
 ```
+## Expecteed results
+
 The last step outputs alignment result as MAF formation 
 
