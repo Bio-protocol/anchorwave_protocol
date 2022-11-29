@@ -35,7 +35,7 @@ conda install -c bioconda -c conda-forge anchorwave
 ## Major Steps
 ## Case study 1:Align two genomes with relocation variation, chromosome fusion or whole genome duplication variation
 In the first case study, we align the sorghum genome to the maize genome via AnchorWave for a step-by-step illustration.
-### 1,Input data
+### 1.Input data
 ```
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/fasta/zea_mays/dna/Zea_mays.AGPv4.dna.toplevel.fa.gz
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/gff3/zea_mays/Zea_mays.AGPv4.34.gff3.gz
@@ -57,7 +57,7 @@ less Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.fai
 
 ```
 
-### 2,Extract CDS and lift over reference and query genome
+### 2.Extract CDS and lift over reference and query genome
 
 For AnchorWave, “gff2seq” function is used for extracting CDS sequences, ‘r’, ‘i’ and ‘o’ represents input reference FASTA, GFF(3) file and output files. For minimap2, “x splice” function represents long-read splice alignment, ‘t’ represents the number of threads, ‘k’ represents k-mer size, ‘p’ represents min score ratio and ‘a’ represents that output file is SAM format. Other parameters are default. 
 
