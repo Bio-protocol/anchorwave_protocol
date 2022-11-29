@@ -1,6 +1,5 @@
-
-#Use this piece of R to draw a dotplot.
 library(ggplot2)
+library(svglite)
 #Transform Coordinates using a function.
 changetoM <- function ( position ){
   position=position/1000000;
@@ -14,8 +13,8 @@ data = data[which(data$V3 %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "1
 data$V1 = factor(data$V1, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ))
 data$V3 = factor(data$V3, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ))
 #Using ggplot2 to plot a dotplot and beautify it.
-png("E:\\plot\\gaoliang\\figure3.png")
-ggplot(data=data, aes(x=V4, y=V2))+geom_point(size=0.5, aes(color=V5))+facet_grid(V1~V3, scales="free", space="free" ) +
+
+figure3 <- ggplot(data=data, aes(x=V4, y=V2))+geom_point(size=0.5, aes(color=V5))+facet_grid(V1~V3, scales="free", space="free" ) +
   labs(x="Mo17", y="B73")+scale_x_continuous(labels=changetoM) + scale_y_continuous(labels=changetoM) +
   theme(axis.line = element_blank(),
         panel.background = element_blank(),
@@ -23,4 +22,12 @@ ggplot(data=data, aes(x=V4, y=V2))+geom_point(size=0.5, aes(color=V5))+facet_gri
         axis.text.y = element_text( colour = "black"),
         legend.position='none',
         axis.text.x = element_text(angle=300, hjust=0, vjust=1, colour = "black") )
+png("E:\\plot\\gaoliang\\figure3.png")  
+figure3
+dev.off()
+pdf("figure3.pdf")
+figure3
+dev.off()
+svglite("figure3.svg")
+figure3
 dev.off()
