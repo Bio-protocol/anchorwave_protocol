@@ -83,6 +83,7 @@ paste(position, "M", sep="")}
 #Read gene position, belong to which chromosome and so on
 data =read.table("cds.tab")
 #Select all euchromosomes as factor.
+#modify the chromosomes number manually if we change the species.
 data = data[which(data$V1 %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")),]
 data = data[which(data$V3 %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")),]
 data$V1 = factor(data$V1, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
