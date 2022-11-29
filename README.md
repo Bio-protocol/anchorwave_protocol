@@ -95,6 +95,7 @@ data = data[which(data$V3 %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "1
 data$V1 = factor(data$V1, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
 data$V3 = factor(data$V3, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
 #Using ggplot2 to plot a dotplot and beautify it.
+#modify the chromosomes number manually if we change the species.
 png("E:\\R_Scripts\\figure1.png")
 ggplot(data=data, aes(x=V4, y=V2)) +geom_point(size=0.5, aes(color=V5)) +
 facet_grid(V1 ~ V3, scales="free",space="free") +labs(x="sorghum", y="maize")+
@@ -130,6 +131,7 @@ paste(position, "M", sep="")}
 library(ggplot2)
 data =read.table("align1.anchors", header=TRUE)
 #Select all euchromosomes as factor
+#modify the chromosomes number manually if we change the species.
 data = data[which(data$refChr %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")),]
 data = data[which(data$queryChr %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")),]
 data$refChr = factor(data$refChr, levels=c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
