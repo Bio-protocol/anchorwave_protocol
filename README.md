@@ -79,6 +79,7 @@ minimap2 -x splice -a -t 10 -p 0.4 -N 20 Sorghum_bicolor.Sorghum_bicolor_NCBIv3.
 perl alignmentToDotplot.pl Zea_mays.AGPv4.34.gff3 cds.sam > cds.tab
 ```
 and then use R to plot Figure1
+Plese noted that we need to modify the chromosomes number manually if we change the species.
 ```
 #Use this piece of R to draw a dotplot.
 library(ggplot2)
