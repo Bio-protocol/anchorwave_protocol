@@ -1,7 +1,7 @@
 # Applying AnchorWave to Address Plant Genome Alignment
 
 ## Introduction
-anchorwave is a software for  sensitive alignment of genomes with high sequence diversity, extensive structural polymorphism and whole-genome duplication variation.
+AnchorWave  is a software for  sensitive alignment of genomes with high sequence diversity, extensive structural polymorphism and whole-genome duplication variation.
 
 The process generally includes three steps: 1.	 Extract CDS as anchors, 2. lift over to the query and reference genome, 3. Perform whole genome alignment and the other steps that visualizes the relationship of two genomes.
 
