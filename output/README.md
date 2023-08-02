@@ -1,8 +1,11 @@
 
 For case study 1 results:
-The out alignment file is 5.2GB.
+The out alignment file is MAF format and about 5.3GB.
 
-We upload the front four lines at align_part.txt.
+For case study 2 results:
+The out alignment file is MAF format and about 5.4GB.
+
+
 
 
 
