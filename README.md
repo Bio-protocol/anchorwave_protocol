@@ -34,7 +34,7 @@ conda install -c bioconda -c conda-forge anchorwave
 
 ## Major Steps
 ## Case study 1:Align two genomes with relocation variation, chromosome fusion or whole genome duplication variation
-In the first case study, we align the sorghum genome to the maize genome via AnchorWave for a step-by-step illustration.
+In the first case study, we align the sorghum genome to the maize genome using AnchorWave.
 ### 1.Input data
 ```
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/fasta/zea_mays/dna/Zea_mays.AGPv4.dna.toplevel.fa.gz
