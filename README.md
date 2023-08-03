@@ -18,7 +18,12 @@ Users should firstly install the following software.
 4.	ggplot2 (Wickham,2016; v3.3.5; https://ggplot2.tidyverse.org)
 
 ## Installation AnchorWave
-
+```
+git clone https://github.com/baoxingsong/anchorwave.git
+cd anchorwave
+cmake ./
+make
+```
 ```
 #Installation using conda
 conda install -c bioconda -c conda-forge anchorwave
