@@ -54,7 +54,6 @@ samtools faidx Zea_mays.AGPv4.dna.toplevel.fa
 samtools faidx Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa
 less Zea_mays.AGPv4.dna.toplevel.fa.fai 
 less Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.fai 
-
 ```
 
 ### 2.Extract CDS and lift over reference and query genome
@@ -68,7 +67,6 @@ anchorwave gff2seq -i Zea_mays.AGPv4.34.gff3 -r Zea_mays.AGPv4.dna.toplevel.fa -
 minimap2 -x splice -a -t 10 -k 12 -p 0.4 -N 20 Zea_mays.AGPv4.dna.toplevel.fa cds.fa > ref.sam
 #lift over query genome
 minimap2 -x splice -a -t 10 -k 12 -p 0.4 -N 20 Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa cds.fa > cds.sam
-
 ```
 
 
@@ -115,7 +113,6 @@ dev.off()
 svglite("figure1.svg")
 figure1
 dev.off()
-
 ```
 ![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure1.png)
 
@@ -163,7 +160,6 @@ dev.off()
 svglite("figure2.svg")
 figure2
 dev.off()
-
 ```
 ![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure2.png)
 
@@ -174,7 +170,6 @@ For AnchorWave, `proali` function is used for whole genome alignment, `as` repre
 ```
 anchorwave proali -i Zea_mays.AGPv4.34.gff3 -r Zea_mays.AGPv4.dna.toplevel.fa -a cds.sam -as cds.fa -ar ref.sam -s \
 Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa  -n align.anchors -o align.maf -t 1 -R 1 -Q 2 -f align1.f.maf
-
 ```
 
 ## Case study 2: Align two maize genomes without translocation rearrangement while with inversions
@@ -189,7 +184,6 @@ wget https://download.maizegdb.org/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-C
 gunzip *.gz
 # transform format 
 sed -i 's/>chr/>/g' Zm-Mo17-REFERENCE-CAU-1.0.fa
-
 ```
 
 
@@ -203,7 +197,6 @@ anchorwave gff2seq -i Zea_mays.AGPv4.34.gff3 -r Zea_mays.AGPv4.dna.toplevel.fa  
 #map CDS to the reference genome and query genome
 minimap2 -x splice -t 10 -k 12 -a -p 0.4 -N 20 Zm-Mo17-REFERENCE-CAU-1.0.fa cds.fa > cds.sam
 minimap2 -x splice -t 10 -k 12 -a -p 0.4 -N 20 Zea_mays.AGPv4.dna.toplevel.fa cds.fa > ref.sam
-
 ```
 We can use R to visualize the full-length CDS mapping result.
 
@@ -245,7 +238,6 @@ dev.off()
 svglite("figure3.svg")
 figure3
 dev.off()
-
 ```
 ![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure3.png)
 
@@ -258,7 +250,6 @@ For	AnchorWave, `genoAli` function is used for whole genome alignment without WG
 ```
 #identify the collinear anchors using AnchorWave.
 anchorwave genoAli -i Zea_mays.AGPv4.34.gff3 -as cds.fa -r Zea_mays.AGPv4.dna.toplevel.fa -a cds.sam -ar ref.sam -s Zm-Mo17-REFERENCE-CAU-1.0.fa -n anchors.anchors -IV
-
 ```
 and then use R to plot Figure4
 
@@ -295,8 +286,6 @@ dev.off()
 svglite("figure4.svg")
 figure4
 dev.off()
-
-
 ```
 ![image](https://github.com/Bio-protocol/anchorwave_protocol/blob/master/graphs/figure4.png)
 
@@ -307,7 +296,6 @@ For	AnchorWave, `genoAli` function is used for whole genome alignment without WG
 
 ```
 anchorwave genoAli -i Zea_mays.AGPv4.34.gff3 -as cds.fa -r Zea_mays.AGPv4.dna.toplevel.fa -a cds.sam -ar ref.sam -s Zm-Mo17-REFERENCE-CAU-1.0.fa -n anchors.anchors -o b73tomo17.maf -f b73tomo17.f.maf -IV
-
 ```
 
 ## Expecteed results
