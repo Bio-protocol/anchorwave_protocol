@@ -15,7 +15,7 @@ Users should firstly install the following software.
 1.	AnchorWave (Song et al., 2022; v1.0.1; https://github.com/baoxingsong/AnchorWave)
 2.	samtools (Li et al., 2009; v1.6; http://www.htslib.org)
 3.	minimap2 (Li, 2018; v2.17-r941; https://github.com/lh3/minimap2)
-4.	ggplot2 (Wickham,2016; v3.3.5; https://ggplot2.tidyverse.org
+4.	ggplot2 (Wickham,2016; v3.3.5; https://ggplot2.tidyverse.org)
 
 ## Installation AnchorWave
 ```
