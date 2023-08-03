@@ -37,6 +37,7 @@ conda install -c bioconda -c conda-forge anchorwave
 In the first case study, we align the sorghum genome to the maize genome using AnchorWave.
 ### 1.Input data
 ```
+#Download and decompress genome and GFF file of reference genome
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/fasta/zea_mays/dna/Zea_mays.AGPv4.dna.toplevel.fa.gz
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-34/gff3/zea_mays/Zea_mays.AGPv4.34.gff3.gz
 wget http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/sorghum_bicolor/dna/Sorghum_bicolor.Sorghum_bicolor_NCBIv3.dna.toplevel.fa.gz
@@ -84,7 +85,7 @@ Please noted that we need to modify the chromosomes number manually if we change
 #Use R to draw a dotplot.
 library(ggplot2)
 library(svglite)
-#Transform Coordinates using a function.
+#Transform Coordinates using follow function.
 changetoM <- function ( position ){
 position=position/1000000;
 paste(position, "M", sep="")}
@@ -209,7 +210,7 @@ We can use R to visualize the full-length CDS mapping result.
 #### Visualization the result of collinearity
 
 ```
-#convert to the SAM file
+#convert to the TAB foamation
 perl alignmentToDotplot.pl Zea_mays.AGPv4.34.gff3 cds.sam > maizecds.tab
 ```
 and then use R to plot Figure3
