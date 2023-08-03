@@ -1,24 +1,15 @@
-#Use this piece of R to draw a dotplot.
+#Use R to draw a dotplot.
 library(ggplot2)
 library(svglite)
-#Transform Coordinates using a function.
 changetoM <- function ( position ){
   position=position/1000000;
   paste(position, "M", sep="")
 }
-#Read gene position, belong to which chromosome and so on
 data =read.table("align1.anchors", header=TRUE)
-#Select all euchromosomes as factor, modify the chromosomes number manually.
-data = data[which(data$refChr %in% c("1", "2", "3", "4",
-                                     "5", "6", "7", "8", "9", "10")),]
-data = data[which(data$queryChr %in% c("1", "2", "3", "4",
-                                       "5", "6", "7", "8", "9", "10")),]
-data$refChr = factor(data$refChr, levels=c("1", "2", "3", "4",
-                                           "5", "6", "7", "8", "9", "10"))
-data$queryCh = factor(data$queryChr, levels=c("1", "2", "3", "4",
-                                              "5", "6", "7", "8", "9", "10"))
-#Using ggplot2 to plot a dotplot and beautify it.
-
+data = data[which(data$refChr %in% c("1", "2", "3", "4","5", "6", "7", "8", "9", "10")),]
+data = data[which(data$queryChr %in% c("1", "2", "3", "4","5", "6", "7", "8", "9", "10")),]
+data$refChr = factor(data$refChr, levels=c("1", "2", "3", "4","5", "6", "7", "8", "9", "10"))
+data$queryCh = factor(data$queryChr, levels=c("1", "2", "3", "4","5", "6", "7", "8", "9", "10"))
 figure4 <- ggplot(data=data, aes(x=queryStart, y=referenceStart))+
   geom_point(size=0.5, aes(color=strand)) +
   facet_grid(refChr~queryChr, scales="free", space="free") +
@@ -39,3 +30,4 @@ dev.off()
 svglite("figure4.svg")
 figure4
 dev.off()
+
